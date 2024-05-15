@@ -16,9 +16,7 @@ const MainPage: React.FC = () => {
   useEffect(() => {
     const fetchLatestPlans = async () => {
       try {
-        const response = await axios.get(
-          "https://ke4f765103c24a.user-app.krampoline.com/api/plans?page=0&size=10&sort=id%2Cdesc"
-        )
+        const response = await axios.get("http://localhost:8081/api/plans?page=0&size=10&sort=id%2Cdesc")
         setLatestPlans(response.data.data.content)
       } catch (error) {
         console.error("Failed to fetch latest plans:", error)
@@ -27,9 +25,7 @@ const MainPage: React.FC = () => {
 
     const fetchBestPlans = async () => {
       try {
-        const response = await axios.get(
-          "https://ke4f765103c24a.user-app.krampoline.com/api/plans?page=0&size=10&sort=likeCount%2Cdesc"
-        )
+        const response = await axios.get("http://localhost:8081/api/plans?page=0&size=10&sort=likeCount%2Cdesc")
         setBestPlans(response.data.data.content)
       } catch (error) {
         console.error("Failed to fetch best plans:", error)
