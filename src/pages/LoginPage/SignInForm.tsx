@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom"
 import { useForm } from "react-hook-form"
 import { useToast } from "@chakra-ui/react"
 import { durationTime } from "@/styles/config"
+import axios from "axios"
 
 interface SignInFormProps {
   title: string
@@ -56,11 +57,15 @@ const SignInForm: FC<SignInFormProps> = ({ title }) => {
       })
   }
 
-  const handleKakaoLogin = () => {
-    // 카카오톡 로그인 처리 로직
-    console.log("카카오톡 로그인 처리")
+  // const handleKakaoLogin = () => {
+  //   // 카카오톡 로그인 처리 로직
+  //   console.log("카카오톡 로그인 처리")
+  //   window.location.href =
+  //     "https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=27237f359df22ee2ab5550853bc190aa&redirect_uri=http://localhost:8081/api/kakao/callback"
+  // }
+  function handleKakaoLogin() {
     window.location.href =
-      "https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=27237f359df22ee2ab5550853bc190aa&redirect_uri=https://ke4f765103c24a.user-app.krampoline.com/kakao/callback"
+      "https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=27237f359df22ee2ab5550853bc190aa&redirect_uri=http://localhost:3000/api/kakao/callback"
   }
 
   return (
@@ -102,3 +107,6 @@ const SignInForm: FC<SignInFormProps> = ({ title }) => {
 }
 
 export default SignInForm
+function kakaoLogin(code: any) {
+  throw new Error("Function not implemented.")
+}

@@ -48,7 +48,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Layout />}>
                 <Route index element={<MainPage />} />
-                <Route path="kakao/callback" element={<KakaoAuth />} />
+                <Route path="/api/kakao/callback" element={<KakaoAuth />} />
                 <Route path="login" element={<LoginPage />} />
                 <Route path="register" element={<RegisterPage />} />
                 <Route path="schedule_share" element={<ScheduleSharePage />} />
