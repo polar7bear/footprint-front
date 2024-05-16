@@ -73,7 +73,6 @@ const NavBar: React.FC = () => {
             </BreadcrumbItem>
             <BreadcrumbItem>
               <BreadcrumbLink as={Link} to={memberId === -1 ? "/login" : "/addreview"}>
-                {/* <BreadcrumbLink as={Link} to="/login"> */}
                 리뷰작성
               </BreadcrumbLink>
             </BreadcrumbItem>

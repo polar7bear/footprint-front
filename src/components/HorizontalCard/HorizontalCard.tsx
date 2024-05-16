@@ -151,7 +151,7 @@ export const ScheduleButtons: React.FC<ScheduleButtonsProps> = ({ writerId, memb
 
   const likePlan = async () => {
     const response = await useCustomFetch(
-      `https://ke4f765103c24a.user-app.krampoline.com/api/plans/like/${id}?memberId=${memberId}`,
+      `${process.env.REACT_APP_API_URL}/api/plans/like/${id}?memberId=${memberId}`,
       { method: "POST" }
     )
 
@@ -199,7 +199,8 @@ export const ScheduleButtons: React.FC<ScheduleButtonsProps> = ({ writerId, memb
 
   const bookmarkPlan = async () => {
     const response = await useCustomFetch(
-      `https://ke4f765103c24a.user-app.krampoline.com/api/bookmarks/${id}?memberId=${memberId}`,
+      `${process.env.REACT_APP_API_URL}/api/bookmarks/${id}?memberId=${memberId}`,
+      // eslint-disable-next-line prettier/prettier
       { method: "POST" }
     )
     if (response.ok) {
@@ -226,7 +227,7 @@ export const ScheduleButtons: React.FC<ScheduleButtonsProps> = ({ writerId, memb
   const unbookmarkPlan = async () => {
     try {
       const response = await useCustomFetch(
-        `https://ke4f765103c24a.user-app.krampoline.com/api/bookmarks/${id}?memberId=${memberId}`,
+        `${process.env.REACT_APP_API_URL}/api/bookmarks/${id}?memberId=${memberId}`,
         { method: "DELETE" }
       )
       if (response.ok) {
@@ -261,7 +262,7 @@ export const ScheduleButtons: React.FC<ScheduleButtonsProps> = ({ writerId, memb
   }
   const handleDelete = async () => {
     try {
-      const response = await axios.delete(`https://ke4f765103c24a.user-app.krampoline.com/api/plans/${id}`, {
+      const response = await axios.delete(`${process.env.REACT_APP_API_URL}/api/plans/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("accessToken")}` }
       })
       if (response.status === 200) {
@@ -360,7 +361,8 @@ export const HorizontalCard: React.FC<HorizontalCardProps> = ({ scheduleDetails 
       try {
         // useCustomFetch 함수를 사용하여 요청을 보냅니다.
         const response = await useCustomFetch(
-          `https://ke4f765103c24a.user-app.krampoline.com/api/plans/${id}?memberId=${memberId}`,
+          `${process.env.REACT_APP_API_URL}/api/plans/${id}?memberId=${memberId}`,
+          // eslint-disable-next-line prettier/prettier
           { method: "GET" }
         )
         const responseData = await response.json()

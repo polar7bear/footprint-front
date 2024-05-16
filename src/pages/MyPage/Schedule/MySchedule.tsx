@@ -56,7 +56,7 @@ const MySchedule = () => {
   useEffect(() => {
     const fetchData = async () => {
       const memberId = getMemberId()
-      const url = `https://ke4f765103c24a.user-app.krampoline.com/api/my/plans?memberId=${memberId}&page=0&size=10&sort=id%2Cdesc`
+      const url = `${process.env.REACT_APP_API_URL}/api/my/plans?memberId=${memberId}&page=0&size=10&sort=id%2Cdesc`
 
       try {
         const response = await useCustomFetch(url, { method: "GET" })

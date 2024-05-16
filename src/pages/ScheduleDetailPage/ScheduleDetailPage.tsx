@@ -32,7 +32,7 @@ const ScheduleDetailPage: React.FC = () => {
       setIsLoading(true)
       const token = localStorage.getItem("accessToken") // 토큰을 로컬 스토리지에서 가져옴
       try {
-        const response = await axios.get(`https://ke4f765103c24a.user-app.krampoline.com/api/plans/${id}`, {
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/plans/${id}`, {
           headers: {
             Authorization: `Bearer ${token}` // Authorization 헤더에 토큰 추가
           }

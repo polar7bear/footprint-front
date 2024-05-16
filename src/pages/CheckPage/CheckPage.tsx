@@ -90,8 +90,9 @@ const CreatePlan: React.FC = () => {
 
   const handleSubmit = async () => {
     try {
+      // eslint-disable-next-line prettier/prettier
       const response = await axios.post(
-        "https://ke4f765103c24a.user-app.krampoline.com/api/plans?memberId=${memberId}",
+        `https://${process.env.REACT_APP_API_URL}/api/plans?memberId=${memberId}`,
         plan
       )
       console.log("Response:", response.data)

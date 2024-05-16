@@ -25,7 +25,6 @@ const DropDownButton: React.FC<DropDownButtonProps> = ({ title, contents }) => {
             {contents.map((item, index) => (
               <Box key={index}>
                 <Link to={memberId === -1 ? "/login" : `/${item[1]}`}>
-                  {/* <Link to="/login"> */}
                   <MenuItem margin="0" padding="0">
                     <StyledMenuItem href="#">{item[0]}</StyledMenuItem>
                   </MenuItem>

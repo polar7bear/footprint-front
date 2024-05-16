@@ -18,7 +18,7 @@ const SearchResultsPage: React.FC = () => {
   async function getSearchedReview() {
     try {
       const data = await useCustomFetch(
-        `https://ke4f765103c24a.user-app.krampoline.com/api/search-reviews?searchKeyword=${query}&page=0&size=8`,
+        `${process.env.REACT_APP_API_URL}/api/search-reviews?searchKeyword=${query}&page=0&size=8`,
         {}
       ).then(response => response)
       if (!data.ok) {
@@ -34,7 +34,7 @@ const SearchResultsPage: React.FC = () => {
   async function getSearchedSchedule() {
     try {
       const data = await useCustomFetch(
-        `https://ke4f765103c24a.user-app.krampoline.com/api/search/plans?keyword=${query}&page=0&size=8&sort=id,desc`,
+        `${process.env.REACT_APP_API_URL}/api/search/plans?keyword=${query}&page=0&size=8&sort=id,desc`,
         {}
       ).then(response => response)
       if (!data.ok) {
