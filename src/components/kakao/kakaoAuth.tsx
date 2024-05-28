@@ -22,6 +22,7 @@ const KakaoAuth = () => {
       if (response.ok) {
         localStorage.setItem("accessToken", data.accessToken)
         localStorage.setItem("refreshToken", data.refreshToken)
+        localStorage.setItem("kakaoId", data.kakaoId)
         navigate("/") // 메인 페이지로 리다이렉션
       } else {
         console.error("Failed to login:", data)

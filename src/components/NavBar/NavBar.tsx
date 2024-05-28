@@ -44,12 +44,32 @@ const NavBar: React.FC = () => {
 
   const handleLogout = () => {
     // 사용자 상태를 null로 설정하고 로그인 페이지로 리디렉션
-
-    // localStorage에서 사용자 정보 제거
-    localStorage.removeItem("accessToken")
-    localStorage.removeItem("refreshToken")
-    localStorage.removeItem("nickname")
-    navigate("/login") // 로그인 페이지로 리디렉션
+    fetch(`${process.env.REACT_APP_API_URL}/api/logout`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("accessToken")}`
+      },
+      body: JSON.stringify({
+        refreshToken: localStorage.getItem("refreshToken")
+      })
+    })
+      .then(response => {
+        if (response.ok) {
+          console.log("로그아웃 성공")
+          // localStorage에서 사용자 정보 제거
+          localStorage.removeItem("accessToken")
+          localStorage.removeItem("refreshToken")
+          localStorage.removeItem("nickname")
+          localStorage.removeItem("kakaoId")
+          navigate("/login") // 로그인 페이지로 리디렉션
+        } else {
+          throw new Error("로그아웃 실패")
+        }
+      })
+      .catch(error => {
+        console.log("로그아웃 처리중 에러 발생 : ", error)
+      })
   }
 
   return (
