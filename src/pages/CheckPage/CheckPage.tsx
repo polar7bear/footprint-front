@@ -91,10 +91,7 @@ const CreatePlan: React.FC = () => {
   const handleSubmit = async () => {
     try {
       // eslint-disable-next-line prettier/prettier
-      const response = await axios.post(
-        `https://${process.env.REACT_APP_API_URL}/api/plans?memberId=${memberId}`,
-        plan
-      )
+      const response = await axios.post(`https://${process.env.REACT_APP_API_URL}/api/plans?memberId=${memberId}`, plan)
       console.log("Response:", response.data)
     } catch (error) {
       console.error("Error posting the plan:", error)

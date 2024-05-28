@@ -57,17 +57,22 @@ export const UploadImageButton = styled.button`
   border-radius: 0.2rem;
 `
 
+export const ProfileContentWrapper = styled.div`
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+`
+
 export const ProfileContent = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  width: 80%;
+  width: 100%;
   margin-top: 1rem;
   border-radius: 1rem;
   padding: 0.5rem 0 0.5rem 1rem;
-
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  // backdrop-filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
 `
 
 export const NicknameEditButton = styled.button``
@@ -90,4 +95,29 @@ export const ContentBody = styled.div`
   width: 100%;
   display: flex;
   font-size: 0.8rem;
+`
+
+export const WithdrawWrap = styled.div`
+  color: red;
+  padding: 1rem;
+  background-color: #fff0f0;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: auto;
+`
+
+export const WithdrawButton = styled.button`
+  color: red;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darkred;
+  }
 `
