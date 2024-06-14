@@ -23,6 +23,9 @@ module.exports = {
     // 충돌이 일어나는 부분 비활성화
     "arrow-body-style": "off",
     "prefer-arrow-callback": "off",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-non-null-assertion": "warn"
   }
 }
